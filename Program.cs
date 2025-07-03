@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using backend.Infrastructure.Data;
 using backend.Services.Auth;
+using backend.Services.Devices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // 註冊Service
 // 這邊可以註冊其他的服務，例如使用者服務、認證服務等
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IAlicatService, AlicatService>();
 
 // JWT驗證設定
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
