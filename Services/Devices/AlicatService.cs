@@ -1,7 +1,5 @@
 using backend.Models.Devices;
 using System.IO.Ports;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Globalization;
 
 namespace backend.Services.Devices
@@ -107,7 +105,6 @@ namespace backend.Services.Devices
         }
       }
     }
-
 
     public async Task<AlicatReading> ReadAsync()
     {
